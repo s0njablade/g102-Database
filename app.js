@@ -1,4 +1,5 @@
 const express = require('express')
+const queries = require('./queries')
 
 const app = express()
 const port = process.env.PORT || 3001
@@ -6,7 +7,7 @@ const port = process.env.PORT || 3001
 
 
 app.get('/', (req, res) => {
-    res.send('hooray i work')
+    queries.listAll().then(students => res.send(students))
 })
 
 
