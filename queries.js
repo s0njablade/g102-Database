@@ -1,7 +1,11 @@
-const database = require('./database-connections')
+const db = require('./database-connections')
+
 
 module.exports = {
-    listAll(){
-        return database('students')
+    getAll(){
+        return db('students')
+    },
+    getById(id){
+        return db('students'). where('id', id)
     }
 }
